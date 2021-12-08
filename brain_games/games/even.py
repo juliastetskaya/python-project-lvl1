@@ -1,8 +1,6 @@
-from random import randint
-
 import prompt
-from brain_games.constants import END_NUMBER, MAX_GAMES_COUNT, START_NUMBER
-from brain_games.math import is_even
+from brain_games.constants import MAX_GAMES_COUNT
+from brain_games.math import is_even, get_random_int
 
 rules = 'Answer "yes" if the number is even, otherwise answer "no".'
 
@@ -12,7 +10,7 @@ def play(name, count=MAX_GAMES_COUNT):
         print('Congratulations, {0}!'.format(name))
         return
 
-    number = randint(START_NUMBER, END_NUMBER)
+    number = get_random_int()
     correct_answer = 'yes' if is_even(number) else 'no'
 
     print('Question: {0}'.format(number))
