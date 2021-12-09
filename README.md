@@ -9,3 +9,4 @@
 
 ### Asciinemas
 [brain-even](https://asciinema.org/a/lKL8pD9tSXiL31LwIab2ow6Jx)
+[brain-calc](https://asciinema.org/a/6S6MYIQs0S7AfeXJ5DlaZhsLb)
