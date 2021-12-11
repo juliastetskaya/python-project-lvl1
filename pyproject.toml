@@ -4,8 +4,14 @@ packages = [
     { include = "brain_games" },
 ]
 version = "0.1.1"
-description = ""
+description = "Five console games for pumping the brain"
 authors = ["Iuliia Stetskaia <iuliia_stetskaia@epam.com>"]
+repository = "https://github.com/juliastetskaya/python-project-lvl1"
+classifiers = [
+    "Topic :: Games/Entertainment",
+    "Programming Language :: Python :: 3.9",
+    "License :: Free For Home Use"
+]
 
 [tool.poetry.scripts]
 brain-games="brain_games.scripts.brain_games:main"
