@@ -1,6 +1,11 @@
 from random import choice, randint
 
-from brain_games.constants import END_NUMBER, OPERATIONS, START_NUMBER
+from brain_games.constants import (
+    END_NUMBER,
+    OPERATIONS,
+    PROGRESSION_LENGTH,
+    START_NUMBER,
+)
 
 
 def is_even(num):
@@ -42,3 +47,15 @@ def nod(num1, num2):
         return str(num2)
 
     return nod(num2, num1 % num2)
+
+
+def make_progression(number_list, step, count=1):
+    if count == PROGRESSION_LENGTH:
+        return number_list
+
+    number_list.append(number_list[-1] + step)
+    return make_progression(number_list, step, count + 1)
+
+
+def get_random_index():
+    return randint(START_NUMBER + 1, END_NUMBER - 1)
