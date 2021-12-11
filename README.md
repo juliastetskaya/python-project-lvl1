@@ -18,3 +18,6 @@
 
 
 [brain-progression](https://asciinema.org/a/LehjtsXP4Qdz61AikOf64YhEN)
+
+
+[brain-prime](https://asciinema.org/a/pi2hle9J1irTEMvjity4vIKkd)

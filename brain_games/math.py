@@ -59,3 +59,19 @@ def make_progression(number_list, step, count=1):
 
 def get_random_index():
     return randint(START_NUMBER + 1, END_NUMBER - 1)
+
+
+def find_divisor(num, test_divisor):
+    if test_divisor ** 2 > num:
+        return num
+    if num % test_divisor == 0:
+        return test_divisor
+    return find_divisor(num, test_divisor + 1)
+
+
+def smallest_divisor(num):
+    return find_divisor(num, 2)
+
+
+def is_prime(num):
+    return num == smallest_divisor(num)
