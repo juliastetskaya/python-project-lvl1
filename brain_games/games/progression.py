@@ -1,23 +1,31 @@
-from brain_games.game import game
-from brain_games.math import get_random_index, get_random_int, make_progression
+from random import randint
 
-rules = 'What number is missing in the progression?'
+RULES = 'What number is missing in the progression?'
+PROGRESSION_LENGTH = 10
+START_NUMBER = 0
+END_NUMBER = 20
+START_INDEX = 1
+END_INDEX = 9
 
 
-def get_data():
-    start = get_random_int()
-    step = get_random_int()
+def make_progression(number_list, step, count=1):
+    if count == PROGRESSION_LENGTH:
+        return number_list
 
-    progression = make_progression([start], step)
+    number_list.append(number_list[-1] + step)
+    return make_progression(number_list, step, count + 1)
 
-    index = get_random_index()
+
+def get_game_data():
+    start_number = randint(START_NUMBER, END_NUMBER)
+    step = randint(START_NUMBER, END_NUMBER)
+
+    progression = make_progression([start_number], step)
+
+    index = randint(START_INDEX, END_INDEX)
     correct_answer = str(progression[index])
     progression[index] = '..'
 
     expression = ' '.join(str(num) for num in progression)
 
     return (expression, correct_answer)
-
-
-def progression():
-    return game(rules, get_data)

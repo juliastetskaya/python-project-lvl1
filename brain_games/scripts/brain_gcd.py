@@ -1,8 +1,9 @@
-from brain_games.games.gcd import gcd
+from brain_games.game import start_game
+from brain_games.games.gcd import RULES, get_game_data
 
 
 def main():
-    gcd()
+    start_game(RULES, get_game_data)
 
 
 if __name__ == '__main__':

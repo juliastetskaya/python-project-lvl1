@@ -1,15 +1,16 @@
-from brain_games.game import game
-from brain_games.math import get_random_int, is_even
+from random import randint
 
-rules = 'Answer "yes" if the number is even, otherwise answer "no".'
+RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
+START_NUMBER = 0
+END_NUMBER = 100
 
 
-def get_data():
-    number = get_random_int()
+def is_even(num):
+    return num % 2 == 0
+
+
+def get_game_data():
+    number = randint(START_NUMBER, END_NUMBER)
     correct_answer = 'yes' if is_even(number) else 'no'
 
     return (number, correct_answer)
-
-
-def even():
-    return game(rules, get_data)
